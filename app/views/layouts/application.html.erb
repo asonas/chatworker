@@ -2,13 +2,28 @@
 <html>
 <head>
   <title>Chatworker</title>
+  <link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap.css">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="/">Chatwork replace icon API</a>
+      <ul class="nav">
+        <li class="active"><a href="/">Ideas</a></li>
+        <li class="active"><a href="/icons/new">Create and update icon</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>
