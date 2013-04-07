@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
+gem "awesome_print"
+gem "pry"
+
 group :development do
   gem 'sqlite3'
 end
