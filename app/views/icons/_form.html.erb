@@ -1,4 +1,4 @@
-<%= form_for(@icon) do |f| %>
+<%= form_for(@icon, html: { multipart: true }) do |f| %>
   <% if @icon.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@icon.errors.count, "error") %> prohibited this icon from being saved:</h2>
@@ -15,9 +15,9 @@
     <%= f.label :class_name %> (ex. cw_aXXXXXXX)<br />
     <%= f.text_field :class_name %>
   </div>
-  <div class="field">
-    <%= f.label :icon_url %> (ex. http://www.gravatar.com/avatar/1ac0db1ea05c74a21a07549c285b0b0d) <br />
-    <%= f.text_field :icon_url %>
+  <div>
+    <label>Icon file</label>10kbまで <br />
+    <%= file_field_tag :image %>
   </div>
   <div class="actions">
     <%= f.submit %>

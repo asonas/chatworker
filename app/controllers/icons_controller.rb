@@ -18,11 +18,14 @@ class IconsController < ApplicationController
   def create
     @icon = Icon.find_by_class_name params[:icon][:class_name]
 
-    if @icon
-      @icon.icon_url = params[:icon][:icon_url]
-    else
+    unless @icon
       @icon = Icon.new params[:icon]
     end
+
+    require "base64"
+    image = params[:image]
+    @icon.base64_encoded_binary = [File.read(image.tempfile)].pack("m")
+    @icon.content_type = image.content_type
 
     if @icon.save
       redirect_to root_path
