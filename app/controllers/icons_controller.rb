@@ -5,8 +5,10 @@ class IconsController < ApplicationController
     respond_to do |format|
       format.html
       format.json do
-        icons = Icon.select(:class_name).select(:icon_url).where(class_name: params[:icon_class_names])
-        render json: icons
+        icon = Icon.where(class_name: params[:class_name]).first
+        render json: {
+          data: icon.base64_encoded_data
+        }
       end
     end
   end
