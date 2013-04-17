@@ -1,4 +1,8 @@
 class IconsController < ApplicationController
+
+  MAX_KILO_BYTE = 10
+  MAX_FILE_SIZE = MAX_KILO_BYTE * 1024
+
   # GET /icons
   # GET /icons.json
   def index
@@ -26,6 +30,11 @@ class IconsController < ApplicationController
 
     require "base64"
     image = params[:image]
+
+    if MAX_FILE_SIZE < image.size
+      redirect_to "/"
+    end
+
     @icon.base64_encoded_binary = [File.read(image.tempfile)].pack("m")
     @icon.content_type = image.content_type
 
