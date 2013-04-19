@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130419022315) do
+ActiveRecord::Schema.define(:version => 20130419022930) do
 
   create_table "icons", :force => true do |t|
     t.string   "class_name"
@@ -21,6 +21,6 @@ ActiveRecord::Schema.define(:version => 20130419022315) do
     t.string   "content_type"
   end
 
-  add_index "icons", ["class_name"], :name => "index_icons_on_class_name"
+  add_index "icons", ["class_name"], :name => "index_icons_on_class_name", :unique => true
 
 end
