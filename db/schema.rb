@@ -11,17 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130413150111) do
+ActiveRecord::Schema.define(:version => 20130419024428) do
 
   create_table "icons", :force => true do |t|
     t.string   "class_name"
-    t.string   "icon_url"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.text     "base64_encoded_binary", :limit => 20480
-    t.string   "content_type"
+    t.text     "base64_encoded_binary", :limit => 20480, :null => false
+    t.string   "content_type",                           :null => false
   end
 
-  add_index "icons", ["class_name"], :name => "index_icons_on_class_name"
+  add_index "icons", ["class_name"], :name => "index_icons_on_class_name", :unique => true
 
 end
