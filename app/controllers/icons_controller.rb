@@ -9,10 +9,15 @@ class IconsController < ApplicationController
     respond_to do |format|
       format.html
       format.json do
-        icon = Icon.where(class_name: params[:class_name]).first
-        render json: {
-          data: icon.base64_encoded_data
-        }
+        icons = []
+        Icon.all.each do |icon|
+          icons << {
+            class_name: icon.class_name,
+            base64_encoded_data: icon.base64_encoded_data,
+          }
+        end
+
+        render json: icons
       end
     end
   end
