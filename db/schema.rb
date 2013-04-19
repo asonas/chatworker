@@ -11,11 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130413150111) do
+ActiveRecord::Schema.define(:version => 20130419022315) do
 
   create_table "icons", :force => true do |t|
     t.string   "class_name"
-    t.string   "icon_url"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.text     "base64_encoded_binary", :limit => 20480
