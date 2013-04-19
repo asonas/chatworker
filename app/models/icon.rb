@@ -5,6 +5,6 @@ class Icon < ActiveRecord::Base
   validates :icon_url, presence: true
 
   def base64_encoded_data
-    "#{self.content_type};base64,#{self.base64_encoded_binary}"
+    "data:#{self.content_type};base64,#{self.base64_encoded_binary}"
   end
 end
