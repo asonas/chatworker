@@ -13,7 +13,7 @@ class IconsController < ApplicationController
         Icon.all.each do |icon|
           icons << {
             class_name: icon.class_name,
-            base64_encoded_data: icon.base64_encoded_data,
+            data_uri_encoded_data: icon.data_uri_encoded_data,
           }
         end
 
