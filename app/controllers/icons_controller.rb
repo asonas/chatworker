@@ -37,7 +37,7 @@ class IconsController < ApplicationController
     image = params[:image]
 
     if MAX_FILE_SIZE < image.size
-      redirect_to "/"
+      return redirect_to "/"
     end
 
     @icon.base64_encoded_binary = [File.read(image.tempfile)].pack("m")
