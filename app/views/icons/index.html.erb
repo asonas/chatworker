@@ -1,1 +1,17 @@
-<strong><a href="https://github.com/asonas/chatworker/blob/master/README.md">How to use</a></strong>
+<p class="lead">
+  <a href="https://github.com/asonas/chatworker/blob/master/README.md">How to use</a>
+</p>
+
+<h2>Icons</h2>
+<table class="table table-bordered">
+  <tr>
+    <th class="class-name">Class Name</th>
+    <th class="images">Image</th>
+  </tr>
+  <% @icons.each do |icon| %>
+    <tr>
+      <th><%= icon[:class_name] %></th>
+      <td><img src="<%= icon[:data_uri_encoded_data] %>"></td>
+    </tr>
+  <% end %>
+</table>

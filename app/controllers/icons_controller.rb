@@ -6,18 +6,17 @@ class IconsController < ApplicationController
   # GET /icons
   # GET /icons.json
   def index
+    @icons = []
+    Icon.all.each do |icon|
+      @icons << {
+        class_name: icon.class_name,
+        data_uri_encoded_data: icon.data_uri_encoded_data,
+      }
+    end
     respond_to do |format|
       format.html
       format.json do
-        icons = []
-        Icon.all.each do |icon|
-          icons << {
-            class_name: icon.class_name,
-            data_uri_encoded_data: icon.data_uri_encoded_data,
-          }
-        end
-
-        render json: icons
+        render json: @icons
       end
     end
   end
