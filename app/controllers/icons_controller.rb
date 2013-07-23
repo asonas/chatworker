@@ -46,4 +46,9 @@ class IconsController < ApplicationController
       redirect_to root_path
     end
   end
+
+  def health
+    head 200
+    return
+  end
 end
