@@ -104,7 +104,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.38)
-    uglifier (2.1.1)
+    uglifier (2.2.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
 
@@ -113,11 +113,11 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
-  coffee-rails (~> 3.2.1)
+  coffee-rails (~> 3.2.2)
   jquery-rails
   pg
   pry
   rails (= 3.2.15)
-  sass-rails (~> 3.2.3)
+  sass-rails (~> 3.2.6)
   sqlite3
-  uglifier (>= 1.0.3)
+  uglifier (~> 2.2.1)
